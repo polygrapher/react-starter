@@ -1,0 +1,28 @@
+{
+  "name": "react-starter",
+  "version": "0.0.1",
+  "description": "Starter kit to build application using react.js",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "browserify -d -t babelify -e ./app/app.jsx -o ./dist/bundle.js",
+    "start": "python -m SimpleHTTPServer",
+    "watch": "watchify -d -t babelify -e ./app/app.jsx -o ./dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EvgenyKravchenko/react-starter"
+  },
+  "keywords": [
+    "reactjs",
+    "starter-kit"
+  ],
+  "author": "Yevhenii Kravchenko",
+  "license": "MIT",
+  "homepage": "https://github.com/EvgenyKravchenko/react-starter",
+  "dependencies": {
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "react": "^0.13.1",
+    "watchify": "^3.1.0"
+  }
+}
