@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "browserify -d -t babelify -e ./app/app.jsx -o ./dist/bundle.js",
-    "start": "python -m SimpleHTTPServer",
+    "start": "http-server",
     "watch": "watchify -d -t babelify -e ./app/app.jsx -o ./dist/bundle.js"
   },
   "repository": {
