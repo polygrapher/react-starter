@@ -14,28 +14,40 @@ class TodoList extends React.Component {
   }
 
   render () {
-    var items = this.props.items.map(function(item) {
+    var items = this.props.items.map(function(item, index) {
       return (
         <TodoListItem
-          key={item.title}
+          key={item.id}
+          id={item.id}
+          index={index}
           title={item.title}
-          done={item.done}
+          status={item.status}
+          handleChange={this.props.handleChange}
+          handleRemove={this.props.handleRemove}
         />
       )
-    });
+    }, this);
 
     return (
-      <ul style={styles.list} className="todo-list">{items}</ul>
+      <ul
+        style={styles.list}
+        className="todo-list">
+          {items}
+      </ul>
     )
   }
 }
 
 TodoList.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: React.PropTypes.array.isRequired,
+  handleChange: React.PropTypes.func.isRequired,
+  handleRemove: React.PropTypes.func.isRequired
 };
 
 TodoList.defaultProps = {
-  items: []
+  items: [],
+  handleChange: React.PropTypes.func.isRequired,
+  handleRemove: React.PropTypes.func.isRequired
 };
 
 export default TodoList;

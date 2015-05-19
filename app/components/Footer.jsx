@@ -1,4 +1,6 @@
 import React from "react";
+import Counter from './Counter.jsx';
+import Button from './Button.jsx';
 
 let styles = {
   footer: {
@@ -17,18 +19,25 @@ class Footer extends React.Component {
   render () {
     return (
       <footer style={styles.footer}>
-        Total: {this.props.items.length}
+        <Counter {...this.props} />
+        <Button
+          name="remove"
+          title="Remove completed"
+          onClick={this.props.handleRemoveCompleted}
+        />
       </footer>
     )
   }
 }
 
 Footer.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: React.PropTypes.array.isRequired,
+  handleRemoveCompleted: React.PropTypes.func.isRequired
 };
 
 Footer.defaultProps = {
-  items: []
+  items: [],
+  handleRemoveCompleted: function() {}
 };
 
 export default Footer;

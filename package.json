@@ -23,6 +23,11 @@
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
     "react": "^0.13.1",
+    "underscore": "^1.8.3",
     "watchify": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-ruby-sass": "^1.0.5"
   }
 }
